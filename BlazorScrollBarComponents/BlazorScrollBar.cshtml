@@ -1,0 +1,40 @@
+﻿@using System.Threading.Tasks
+
+@if (IncludeCSS)
+{
+    <BlazorScrollBarCss />
+}
+
+<input type="range"
+       min="@Minimum"
+       max="@Maximum"
+       step="@Step"
+       value="@Position"
+       oninput=@PositionChanged
+       class="@ScrollBarClass"
+       style="--thumb-width:@(ThumbWidth);" />
+
+@functions
+{
+  [Parameter] protected int Minimum { get; set; } = 0;
+  [Parameter] protected int Maximum { get; set; } = 99;
+  [Parameter] protected int Step { get; set; } = 1;
+  [Parameter] protected int Position { get; set; } = 0;
+  [Parameter] protected string ScrollBarClass { get; set; } = "sb-gray-sm";
+  [Parameter] protected bool IncludeCSS { get; set; } = true;
+  [Parameter] protected string ThumbWidth { get; set; } = null;
+  [Parameter] protected Action<int> OnScrollBarMove { get; set; }
+
+  Task<bool> PositionChanged(UIChangeEventArgs args)
+  {
+      int position;
+      if (int.TryParse(args.Value.ToString(), out position))
+      {
+          Position = position;
+          OnScrollBarMove?.Invoke(Position);
+          return Task.FromResult(true);
+      }
+      return Task.FromResult(false);
+
+  }
+}

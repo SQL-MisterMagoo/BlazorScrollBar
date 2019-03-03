@@ -1,14 +1,16 @@
-﻿input[type=range].slider {
+﻿<style>
+input[type=range].sb-accessible {
     -webkit-appearance: none;
     width: 100%;
     margin: 0px 0;
+    --thumb-width:32px;
 }
 
-    input[type=range].slider:focus {
+    input[type=range].sb-accessible:focus {
         outline: none;
     }
 
-    input[type=range].slider::-webkit-slider-runnable-track {
+    input[type=range].sb-accessible::-webkit-slider-runnable-track {
         width: 100%;
         height: 32px;
         cursor: pointer;
@@ -18,11 +20,11 @@
         border: 0px solid #010101;
     }
 
-    input[type=range].slider::-webkit-slider-thumb {
+    input[type=range].sb-accessible::-webkit-slider-thumb {
         box-shadow: 0.8px 0.8px 1.9px rgba(0, 0, 62, 0.67), 0px 0px 0.8px rgba(0, 0, 88, 0.67);
         border: 1.9px solid rgba(0, 30, 0, 0.57);
         height: 32px;
-        width: 32px;
+        width: var(--thumb-width);
         border-radius: 4px;
         background: #3071a9;
         cursor: pointer;
@@ -30,11 +32,11 @@
         margin-top: 0px;
     }
 
-    input[type=range].slider:focus::-webkit-slider-runnable-track {
+    input[type=range].sb-accessible:focus::-webkit-slider-runnable-track {
         background: #ffffff;
     }
 
-    input[type=range].slider::-moz-range-track {
+    input[type=range].sb-accessible::-moz-range-track {
         width: 100%;
         height: 32px;
         cursor: pointer;
@@ -44,17 +46,17 @@
         border: 0px solid #010101;
     }
 
-    input[type=range].slider::-moz-range-thumb {
+    input[type=range].sb-accessible::-moz-range-thumb {
         box-shadow: 0.8px 0.8px 1.9px rgba(0, 0, 62, 0.67), 0px 0px 0.8px rgba(0, 0, 88, 0.67);
         border: 1.9px solid rgba(0, 30, 0, 0.57);
         height: 32px;
-        width: 32px;
+        width: var(--thumb-width);
         border-radius: 4px;
         background: #3071a9;
         cursor: pointer;
     }
 
-    input[type=range].slider::-ms-track {
+    input[type=range].sb-accessible::-ms-track {
         width: 100%;
         height: 32px;
         cursor: pointer;
@@ -63,49 +65,50 @@
         color: transparent;
     }
 
-    input[type=range].slider::-ms-fill-lower {
+    input[type=range].sb-accessible::-ms-fill-lower {
         background: #ffff9e;
         border: 0px solid #010101;
         border-radius: 0px;
         box-shadow: 0px 0px 8.9px #000000, 0px 0px 0px #0d0d0d;
     }
 
-    input[type=range].slider::-ms-fill-upper {
+    input[type=range].sb-accessible::-ms-fill-upper {
         background: #ffffd6;
         border: 0px solid #010101;
         border-radius: 0px;
         box-shadow: 0px 0px 8.9px #000000, 0px 0px 0px #0d0d0d;
     }
 
-    input[type=range].slider::-ms-thumb {
+    input[type=range].sb-accessible::-ms-thumb {
         box-shadow: 0.8px 0.8px 1.9px rgba(0, 0, 62, 0.67), 0px 0px 0.8px rgba(0, 0, 88, 0.67);
         border: 1.9px solid rgba(0, 30, 0, 0.57);
-        width: 32px;
+        width: var(--thumb-width);
         border-radius: 4px;
         background: #3071a9;
         cursor: pointer;
         height: 32px;
     }
 
-    input[type=range].slider:focus::-ms-fill-lower {
+    input[type=range].sb-accessible:focus::-ms-fill-lower {
         background: #ffffd6;
     }
 
-    input[type=range].slider:focus::-ms-fill-upper {
+    input[type=range].sb-accessible:focus::-ms-fill-upper {
         background: #ffffff;
     }
 
-input[type=range].slider2 {
+input[type=range].sb-gray-sm {
     -webkit-appearance: none;
     width: 100%;
     margin: 0px 0;
+    --thumb-width:16px;
 }
 
-    input[type=range].slider2:focus {
+    input[type=range].sb-gray-sm:focus {
         outline: none;
     }
 
-    input[type=range].slider2::-webkit-slider-runnable-track {
+    input[type=range].sb-gray-sm::-webkit-slider-runnable-track {
         width: 100%;
         height: 16px;
         cursor: pointer;
@@ -115,11 +118,11 @@ input[type=range].slider2 {
         border: 0px solid #010101;
     }
 
-    input[type=range].slider2::-webkit-slider-thumb {
+    input[type=range].sb-gray-sm::-webkit-slider-thumb {
         box-shadow: 0px 0px 0px #670000, 0px 0px 0px #810000;
         border: 0.5px solid rgba(0, 0, 0, 0.63);
         height: 16px;
-        width: 16px;
+        width: var(--thumb-width);
         border-radius: 2px;
         background: #a5a4a2;
         cursor: pointer;
@@ -127,11 +130,11 @@ input[type=range].slider2 {
         margin-top: 0px;
     }
 
-    input[type=range].slider2:focus::-webkit-slider-runnable-track {
+    input[type=range].sb-gray-sm:focus::-webkit-slider-runnable-track {
         background: #ffffff;
     }
 
-    input[type=range].slider2::-moz-range-track {
+    input[type=range].sb-gray-sm::-moz-range-track {
         width: 100%;
         height: 16px;
         cursor: pointer;
@@ -141,7 +144,7 @@ input[type=range].slider2 {
         border: 0px solid #010101;
     }
 
-    input[type=range].slider2::-moz-range-thumb {
+    input[type=range].sb-gray-sm::-moz-range-thumb {
         box-shadow: 0px 0px 0px #670000, 0px 0px 0px #810000;
         border: 0.5px solid rgba(0, 0, 0, 0.63);
         height: 16px;
@@ -151,7 +154,7 @@ input[type=range].slider2 {
         cursor: pointer;
     }
 
-    input[type=range].slider2::-ms-track {
+    input[type=range].sb-gray-sm::-ms-track {
         width: 100%;
         height: 16px;
         cursor: pointer;
@@ -160,21 +163,21 @@ input[type=range].slider2 {
         color: transparent;
     }
 
-    input[type=range].slider2::-ms-fill-lower {
+    input[type=range].sb-gray-sm::-ms-fill-lower {
         background: #f2f2f2;
         border: 0px solid #010101;
         border-radius: 2.6px;
         box-shadow: 0px 0px 1px #000000, 0px 0px 0px #0d0d0d;
     }
 
-    input[type=range].slider2::-ms-fill-upper {
+    input[type=range].sb-gray-sm::-ms-fill-upper {
         background: #ffffff;
         border: 0px solid #010101;
         border-radius: 2.6px;
         box-shadow: 0px 0px 1px #000000, 0px 0px 0px #0d0d0d;
     }
 
-    input[type=range].slider2::-ms-thumb {
+    input[type=range].sb-gray-sm::-ms-thumb {
         box-shadow: 0px 0px 0px #670000, 0px 0px 0px #810000;
         border: 0.5px solid rgba(0, 0, 0, 0.63);
         width: 16px;
@@ -184,10 +187,11 @@ input[type=range].slider2 {
         height: 16px;
     }
 
-    input[type=range].slider2:focus::-ms-fill-lower {
+    input[type=range].sb-gray-sm:focus::-ms-fill-lower {
         background: #ffffff;
     }
 
-    input[type=range].slider2:focus::-ms-fill-upper {
+    input[type=range].sb-gray-sm:focus::-ms-fill-upper {
         background: #ffffff;
     }
+</style>

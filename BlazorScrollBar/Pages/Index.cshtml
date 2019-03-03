@@ -6,12 +6,12 @@ Welcome to your new scrollbar parade...
 
 <h1>@positionx</h1>
 
-<input type="range" min="0" max="99" step="1" value="@positionx" oninput=@position class="slider" />
+<BlazorScrollBar Minimum="0" Maximum="99" Position="@positionx" OnScrollBarMove="@position" ScrollBarClass="sb-accessible"/>
 
 <h1>@positionx2</h1>
-<div style="width:100%;max-width:100%;height:200px;border:red;overflow:hidden;">
-    <div style="width:200%;transform:translateX(@(divleft)vw);transition:all;">
-        <table border="1" style="width:100%;">
+<div style="position:relative;width:100%;max-width:100%;height:200px;;overflow:hidden;padding-right:1px;">
+    <div style="transform:translateX(@(divleft)%);">
+        <table border="1" style="width:200%;">
             <tr><th>One</th><th>Two</th><th>Three</th></tr>
             <tr><td>One</td><td>Two</td><td>Three</td></tr>
             <tr><td>One</td><td>Two</td><td>Three</td></tr>
@@ -22,20 +22,22 @@ Welcome to your new scrollbar parade...
         </table>
     </div>
 </div>
-<input type="range" min="0" max="99" step="1" value="@positionx2" oninput=@position2 class="slider2" />
+<BlazorScrollBar Minimum="0" Maximum="100" Position="@positionx2" OnScrollBarMove="@position2" ThumbWidth="64px"/>
 
 @functions
 {
-  int divleft;
-  int positionx;
-  int positionx2;
-  void position(UIChangeEventArgs args)
-  {
-      int.TryParse(args.Value.ToString(), out positionx);
-  }
-  void position2(UIChangeEventArgs args)
-  {
-      int.TryParse(args.Value.ToString(), out positionx2);
-      divleft = positionx2 * -1;
-  }
+    int divleft;
+    int positionx;
+    int positionx2;
+    void position(int value)
+    {
+        positionx = value;
+        StateHasChanged();
+    }
+    void position2(int value)
+    {
+        positionx2 = value;
+        divleft = positionx2 * -1;
+        StateHasChanged();
+    }
 }
